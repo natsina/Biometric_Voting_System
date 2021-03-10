@@ -73,19 +73,14 @@ public class Vote{
 			
 	}
 	
+	// Instance of candidate names for input in hashmap as key when values have been collated
+	protected static String cand1 = "Nana Akuffo Addo";
+	protected static String cand2 = "John Dramani Mahama";
+	protected static String cand3 = "Ivor Greenstreet";
+	protected static String cand4 = "Christian Kwabena Andrews";
 	
-	/**
-	 * Driver Code
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		ArrayList<String> candidates = new ArrayList<String>();
-		candidates.add("Nana Akuffo Addo");
-		candidates.add("John Dramani Mahama");
-		candidates.add("Akua Donkor");
+
 	
-	Vote test = new Vote();
-	test.submitVote();
-	}
+
 
 }
