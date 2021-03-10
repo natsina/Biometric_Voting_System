@@ -1,16 +1,25 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  * 
  * @author Team 1 9
  *
  */
-public class Vote extends Candidate{
+public class Vote{
 	
-	Vote(String candidate_name, int candidate_id, String political_Party) {
-		super(candidate_name, candidate_id, political_Party);
-		// TODO Auto-generated constructor stub
-	}
+	/*
+	 * Vote(String candidate_name, int candidate_id, String political_Party) {
+	 * super(candidate_name, candidate_id, political_Party); // TODO Auto-generated
+	 * constructor stub }
+	 */
 
+	
+	
+	
 	private int VoteID;
 	
 	/**
@@ -42,6 +51,28 @@ public class Vote extends Candidate{
 		return counter;
 	}
 
+	public void submitVote() {
+		Scanner input = new Scanner(System.in);	
+		
+		System.out.println("Enter your ID number: ");
+		String voterID = input.nextLine();
+		input.close();
+		
+		try {
+			FileWriter writer = new FileWriter("VoterID.txt", true);
+			BufferedWriter bw = new BufferedWriter(writer);
+			
+			bw.write(voterID);
+			bw.close();
+			
+		} catch (IOException e) {
+			System.out.println(e);
+		}
+		
+		System.out.println("Success");
+			
+	}
+	
 	
 	/**
 	 * Driver Code
@@ -52,7 +83,9 @@ public class Vote extends Candidate{
 		candidates.add("Nana Akuffo Addo");
 		candidates.add("John Dramani Mahama");
 		candidates.add("Akua Donkor");
-	}
 	
+	Vote test = new Vote();
+	test.submitVote();
+	}
 
 }
