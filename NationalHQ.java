@@ -2,27 +2,38 @@
 public class NationalHQ extends RegionalOffice {
 	private String Nation;
 	
-	public NationalHQ() {}
 	
-	public String getNation() {
+	public NationalHQ() {}// default constructor
+	/**
+	 * Acessor Method: getNation()
+	 * @param Nation
+	 */
+	public String getNation() { //accessor method
 		return Nation;
 	}
+	/**
+	 * Mutator Method: setNation()
+	 * @param Nation
+	 */
 
-
-	public void setNation(String nation) {
+	public void setNation(String nation) { 
 		Nation = nation;
 	}
 
 	@Override
+	//To String method
 	public String toString() {
 		return "NationalHQ [Nation=" + Nation + "]";
 	}
-
+	/**
+	 * @param args nat_party1,nat_party2,nat_party3,nat_party4
+	 */
 	private static int nat_party1;
 	private static int nat_party2;
 	private static int nat_party3;
 	private static int nat_party4;
 	
+	//Collate method
 	public static void collateNational() {
 		RegionalOffice natresults = new RegionalOffice();
 		RegionalOffice.tallyReg();
@@ -43,14 +54,14 @@ public class NationalHQ extends RegionalOffice {
 		}
 		
 	}
-	
+		//method to get the national tally
 		public static void tallyNat() {
 			NationalHQ.collateNational();
 		}
 		
 		public static void main(String[] args) {
 			NationalHQ.tallyNat();
-
+			//results: totdal votes each party recieved in the various regions
 			System.out.println("NPP -> " + regional.get("NPP"));
 			System.out.println("NDC -> " + regional.get("NDC"));
 			System.out.println("GUM -> " + regional.get("GUM"));
