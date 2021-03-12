@@ -79,7 +79,7 @@ public class PollingStation extends Vote{
 			return poll3;
 		}
 
-		public void insert() {
+		public void insertPoll() {
 			poll1.put("NPP", 234);
 			poll1.put("NDC", 251);
 			poll1.put("GUM", 128);
@@ -100,14 +100,8 @@ public class PollingStation extends Vote{
 		
 		PollingStation results = new PollingStation();
 		
-		results.insert();
-		
-
-		
-		int part = results.getpoll1().get("NPP") + results.getpoll2().get("NPP") + results.getpoll3().get("NPP");
-		System.out.println(part);
+		results.insertPoll();
 	}
-	
 	
 }
 
