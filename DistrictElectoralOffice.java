@@ -47,6 +47,9 @@ public class DistrictElectoralOffice extends PollingStation {
 	
 	public static void collate() {
 		PollingStation results = new PollingStation();
+		results.insert();
+		
+		try {
 		
 		party1 = results.getpoll1().get("NPP") + results.getpoll2().get("NPP") + results.getpoll3().get("NPP");
 		party2 = results.getpoll1().get("NDC") + results.getpoll2().get("NDC") + results.getpoll3().get("NDC");
@@ -56,9 +59,12 @@ public class DistrictElectoralOffice extends PollingStation {
 		district.put("NPP", party1);
 		district.put("NDC", party2);
 		district.put("GUM", party3);
-		district.put("PPP", party4);		
+		district.put("PPP", party4);
+		
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+		}
 	}
-	
 
 	public static void main(String[] args) {
 		DistrictElectoralOffice dist = new DistrictElectoralOffice();
@@ -71,3 +77,5 @@ public class DistrictElectoralOffice extends PollingStation {
 	}
 	
 }
+
+

@@ -59,45 +59,50 @@ public class PollingStation extends Vote{
 	
 	
 
-		public static HashMap<String, Integer> poll1 = new HashMap<String, Integer>();
+		public HashMap<String, Integer> poll1 = new HashMap<String, Integer>();
 		
 		public HashMap<String, Integer> getpoll1(){
 			return poll1;
 		}
 		
 		
-		public static HashMap<String, Integer> poll2 = new HashMap<String, Integer>();
+		public HashMap<String, Integer> poll2 = new HashMap<String, Integer>();
 		
 		public HashMap<String, Integer> getpoll2(){
 			return poll2;
 		}
 		
 		
-		public static HashMap<String, Integer> poll3 = new HashMap<String, Integer>();
+		public HashMap<String, Integer> poll3 = new HashMap<String, Integer>();
 		
 		public HashMap<String, Integer> getpoll3(){
 			return poll3;
 		}
 
-	
+		public void insert() {
+			poll1.put("NPP", 234);
+			poll1.put("NDC", 251);
+			poll1.put("GUM", 128);
+			poll1.put("PPP", 356);
+			
+			poll2.put("NPP", 234);
+			poll2.put("NDC", 251);
+			poll2.put("GUM", 128);
+			poll2.put("PPP", 356);
+			
+			poll3.put("NPP", 234);
+			poll3.put("NDC", 251);
+			poll3.put("GUM", 128);
+			poll3.put("PPP", 356);
+		}
+		
 	public static void main(String[] args) {
 		
 		PollingStation results = new PollingStation();
 		
-		poll1.put("NPP", 234);
-		poll1.put("NDC", 251);
-		poll1.put("GUM", 128);
-		poll1.put("PPP", 356);
+		results.insert();
 		
-		poll2.put("NPP", 234);
-		poll2.put("NDC", 251);
-		poll2.put("GUM", 128);
-		poll2.put("PPP", 356);
-		
-		poll3.put("NPP", 234);
-		poll3.put("NDC", 251);
-		poll3.put("GUM", 128);
-		poll3.put("PPP", 356);
+
 		
 		int part = results.getpoll1().get("NPP") + results.getpoll2().get("NPP") + results.getpoll3().get("NPP");
 		System.out.println(part);
