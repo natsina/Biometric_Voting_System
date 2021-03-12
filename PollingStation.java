@@ -16,6 +16,8 @@ public class PollingStation extends Vote{
 		this.votes = votes;
 	}
 
+	public PollingStation() {}
+	
 	public int getPollStatID() {
 		return pollStatID;
 	}
@@ -50,23 +52,55 @@ public class PollingStation extends Vote{
 
 	
 	// Instance variables represent total votes at polling station level
-	protected static int cand1_votes;
-	protected static int cand2_votes;
-	protected static int cand3_votes;
+	protected static int party1;
+	protected static int party2;
+	protected static int party3;
+	protected static int party4;
 	
 	
-	public void collate() {
+
+		public static HashMap<String, Integer> poll1 = new HashMap<String, Integer>();
+		
+		public HashMap<String, Integer> getpoll1(){
+			return poll1;
+		}
 		
 		
-	}
+		public static HashMap<String, Integer> poll2 = new HashMap<String, Integer>();
+		
+		public HashMap<String, Integer> getpoll2(){
+			return poll2;
+		}
+		
+		
+		public static HashMap<String, Integer> poll3 = new HashMap<String, Integer>();
+		
+		public HashMap<String, Integer> getpoll3(){
+			return poll3;
+		}
+
 	
 	public static void main(String[] args) {
-
-		HashMap<String, Integer> votes = new HashMap<String, Integer>();
-		votes.put(cand1, cand1_votes);
-		votes.put(cand2, cand2_votes);
-		votes.put(cand3, cand3_votes);
 		
+		PollingStation results = new PollingStation();
+		
+		poll1.put("NPP", 234);
+		poll1.put("NDC", 251);
+		poll1.put("GUM", 128);
+		poll1.put("PPP", 356);
+		
+		poll2.put("NPP", 234);
+		poll2.put("NDC", 251);
+		poll2.put("GUM", 128);
+		poll2.put("PPP", 356);
+		
+		poll3.put("NPP", 234);
+		poll3.put("NDC", 251);
+		poll3.put("GUM", 128);
+		poll3.put("PPP", 356);
+		
+		int part = results.getpoll1().get("NPP") + results.getpoll2().get("NPP") + results.getpoll3().get("NPP");
+		System.out.println(part);
 	}
 	
 	
